@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { RecipeService } from '../../services/recipe-service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,9 @@ import { RouterLink } from "@angular/router";
   styleUrl: './header.css',
 })
 export class Header {
+  private recipeService = inject(RecipeService);
 
+  onSearch(term: string) {
+    this.recipeService.updateSearch(term);
+  }
 }

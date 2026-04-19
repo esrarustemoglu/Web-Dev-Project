@@ -5,9 +5,11 @@ import { Favorite } from '../../interfaces/favorite';
 import { Profile } from '../../interfaces/profile';
 import { Rating } from '../../interfaces/rating';
 import { Recipe } from '../../interfaces/recipe';
+import { MainContent } from '../main-content/main-content';
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [MainContent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

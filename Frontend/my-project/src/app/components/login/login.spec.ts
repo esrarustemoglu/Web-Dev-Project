@@ -1,4 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validator } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { Profile } from '../../interfaces/profile';
 
 import { Login } from './login';
 

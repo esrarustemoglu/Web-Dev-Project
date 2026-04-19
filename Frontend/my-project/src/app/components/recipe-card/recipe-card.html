@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="image-box">
+      <img [src]="recipe().image" [alt]="recipe().title">
+      <span class="difficulty-tag" [ngClass]="recipe().difficulty.toLowerCase()">
+        {{ recipe().difficulty }}
+      </span>
+    </div>
+  
+    <div class="card-content">
+      <h3>{{ recipe().title }}</h3>
+      <p class="description">{{ recipe().description | slice:0:70 }}...</p>
+      
+      <div class="stats">
+        <span>⏱️ {{ recipe().prep_time }}m</span>
+        <span>🍽️ {{ recipe().servings }} serv</span>
+      </div>
+  
+      <a [routerLink]="['/recipe', recipe().id]" class="view-btn">View Recipe</a>
+    </div>
+  </div>

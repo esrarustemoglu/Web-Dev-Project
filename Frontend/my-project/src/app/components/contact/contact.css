@@ -1,24 +1,65 @@
-.Contact-container{
-    text-align: center;
+.contact-container {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333;
 }
-.input{
-    padding: 10px;
-    width: 200px;
-    border: 1px solid black;
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info h2 {
+    color: rgb(34, 33, 33);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background: #f9f9f9;
+    padding: 30px;
     border-radius: 8px;
-}
-.UserName{
-    padding: 5px;
-}
-.Email{
-    padding-bottom: 5px;
-}
-.select{
-    width: 200px;
-    padding: 10px;
-}
-.Subject{
-    padding-bottom: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.form-group {
+    margin-bottom: 20px;
+}
 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background-color: rgb(34, 33, 33);
+    color: antiquewhite;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #444;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}

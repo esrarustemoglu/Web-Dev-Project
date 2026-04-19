@@ -1,5 +1,9 @@
 .footer-container{
     background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: center;
+    padding: 40px 30px;      
+    width: 100%;
 }
 .text-white{
     color:antiquewhite;
@@ -19,4 +23,6 @@
 }
 .footer-div{
     padding-top: 40px;
+    display: block;
 }
+

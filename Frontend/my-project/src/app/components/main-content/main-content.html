@@ -1,0 +1,25 @@
+<section class="recipe-grid">
+    @for (recipe of recipes(); track recipe.id) {
+      <article class="recipe-card">
+        <img [src]="recipe.image" [alt]="recipe.title">
+        <div class="card-info">
+          <h3>{{ recipe.title }}</h3>
+          <p>{{ recipe.description }}</p>
+          <div class="tags">
+            <span class="badge">{{ recipe.difficulty }}</span>
+            <span class="time">{{ recipe.prep_time }} mins</span>
+          </div>
+          <a [routerLink]="['/recipes', recipe.id]" class="btn-detail">View Recipe</a>
+        </div>
+      </article>
+    } @empty {
+      <p class="text-white">No recipes found.</p>
+    }
+  </section>
+  <section class="recipe-grid">
+    @for (recipe of filteredRecipes(); track recipe.id) {
+      <app-recipe-card [recipe]="recipe" />
+    } @empty {
+      <p>No recipes match your search.</p>
+    }
+  </section>
