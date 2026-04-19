@@ -1,0 +1,24 @@
+.Contact-container{
+    text-align: center;
+}
+.input{
+    padding: 10px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.UserName{
+    padding: 5px;
+}
+.Email{
+    padding-bottom: 5px;
+}
+.select{
+    width: 200px;
+    padding: 10px;
+}
+.Subject{
+    padding-bottom: 5px;
+}
+
+

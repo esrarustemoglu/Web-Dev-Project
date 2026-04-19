@@ -1,0 +1,22 @@
+.footer-container{
+    background-color: rgb(34, 33, 33);
+}
+.text-white{
+    color:antiquewhite;
+    text-align: center;
+
+}
+.footer-container{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    
+}
+.name{
+    color:antiquewhite;
+    text-decoration: none;
+}
+.footer-div{
+    padding-top: 40px;
+}

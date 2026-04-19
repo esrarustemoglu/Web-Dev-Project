@@ -1,0 +1,33 @@
+.nav{
+    background-color: rgb(34, 33, 33);
+}
+.nav-bar{
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.nav-list{
+    display: flex;
+    gap:40px;
+    
+}
+.nav-item{
+    list-style-type: none;
+    margin-top: 40px;
+    padding-bottom: 40px;
+
+}
+.nav-link{
+    color:antiquewhite;
+    text-decoration: none;
+}
+.form-control{
+    margin-top: 40px;
+}
+.image{
+    width: 90px;
+    margin-top: 1.5px;
+}
+.nav-link:hover{
+    color:rgb(252, 220, 182);
+}

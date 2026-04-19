@@ -1,0 +1,21 @@
+<div class="Contact-container">
+    <form (ngSubmit)="submitFeedback()">
+    <div class="UserName">
+        <input class ="input" type="text" name="username" [(ngModel)] = "contactForm.name">
+    </div>
+    <div class="Email">
+        <input class ="input" type="text" name="email" [(ngModel)] = "contactForm.email">
+    </div>
+    <div class="Subject">
+        <select class ="select" name="subject" [(ngModel)] = "contactForm.subject">
+            <option>Technical Issue</option>
+            <option>Recipe Questions</option>
+            <option>Other</option>
+        </select> 
+    </div>
+    <div class="Message">
+        <textarea  name="message" [(ngModel)] = "contactForm.message" rows = "5"> </textarea>
+    </div>
+    <button class ="submit-btn" type="submit" >Send</button>
+    </form>
+</div>
