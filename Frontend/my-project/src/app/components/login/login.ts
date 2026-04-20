@@ -11,17 +11,9 @@ import { Profile } from '../../interfaces/profile';
   styleUrl: './login.css',
 })
 export class Login {
-  fb = inject(FormBuilder);
-  http = inject(HttpClient);
-  authService = inject(AuthService);
-  router = inject(Router);
+  private authService = inject(AuthService);
 
-  form = this.fb.nonNullable.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
-
-  onSubmit(): void {
-    
+  onLogin() {
+    this.authService.login();
   }
 }

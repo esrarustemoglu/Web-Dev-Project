@@ -31,3 +31,30 @@
 .nav-link:hover{
     color:rgb(252, 220, 182);
 }
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    text-decoration: none;
+    color: antiquewhite;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.btn-primary {
+    background-color: antiquewhite;
+    color: rgb(34, 33, 33);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.btn-outline {
+    border: 1px solid antiquewhite;
+    padding: 6px 12px;
+    border-radius: 4px;
+}

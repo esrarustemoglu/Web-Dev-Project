@@ -16,7 +16,16 @@
                     <input  class="form-control" type="text" placeholder="Search" (input)="onSearch($any($event.target).value)" aria-label="Search">
                 </form>
             </ul>
-            
+            <div class="auth-buttons">
+                @if (!authService.isLoggedIn()) {
+                  <a routerLink="/login" class="btn">Login</a>
+                  <a routerLink="/register" class="btn btn-primary">Register</a>
+                } @else {
+                  <a routerLink="/profile" class="btn">My Profile</a>
+                  <button (click)="onLogout()" class="btn btn-outline">Logout</button>
+                }
+              </div>
         </div>
+       
     </div>
 </nav>

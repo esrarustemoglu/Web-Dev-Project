@@ -7,5 +7,16 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  
+  isLoggedIn = signal<boolean>(false);
+  router: any;
+
+  login() {
+    this.isLoggedIn.set(true);
+    this.router.navigate(['/profile']);
+  }
+
+  logout() {
+    this.isLoggedIn.set(false);
+    this.router.navigate(['/']); 
+  }
 }
