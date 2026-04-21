@@ -1,0 +1,297 @@
+{
+  "info": {
+    "name": "RecipeHub API",
+    "_postman_id": "recipehub-demo-collection",
+    "description": "Postman collection for RecipeHub project requirements.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"chef1\",\n  \"email\": \"chef1@example.com\",\n  \"password\": \"test1234\",\n  \"password2\": \"test1234\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/register/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"chef1\",\n  \"password\": \"test1234\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Categories - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/categories/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "categories",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Categories - Seed",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/categories/seed/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "categories",
+            "seed",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Recipes - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/recipes/?search=pasta&ordering=highest_rated",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "recipes",
+            ""
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "pasta"
+            },
+            {
+              "key": "ordering",
+              "value": "highest_rated"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Recipes - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "category_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "value": "Creamy Pasta",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Comfort food with quick prep.",
+              "type": "text"
+            },
+            {
+              "key": "instructions",
+              "value": "Boil pasta. Make sauce. Mix and serve.",
+              "type": "text"
+            },
+            {
+              "key": "difficulty",
+              "value": "easy",
+              "type": "text"
+            },
+            {
+              "key": "prep_time_minutes",
+              "value": "25",
+              "type": "text"
+            },
+            {
+              "key": "servings",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "ingredients_payload",
+              "value": "[{\"ingredient_name\": \"Pasta\", \"quantity\": 200, \"unit\": \"g\"}, {\"ingredient_name\": \"Cream\", \"quantity\": 150, \"unit\": \"ml\"}]",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/recipes/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "recipes",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Recipe - Detail",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/recipes/1/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "recipes",
+            "1",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Recipe - Rate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": 5\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/recipes/1/rate/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "recipes",
+            "1",
+            "rate",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Recipe - Comments",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/recipes/1/comments/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "recipes",
+            "1",
+            "comments",
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Favorite - Add",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{accessToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"recipe_id\": 1\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/favorites/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "favorites",
+            ""
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000/api"
+    },
+    {
+      "key": "accessToken",
+      "value": ""
+    }
+  ]
+}
